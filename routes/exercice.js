@@ -40,19 +40,25 @@ router.post('/:_id/exercises', (req, res) => {
                     res.send(err);
                 else {
 
-                    let r = {};
+                    /*  let r = {
+                          "description": mExercice.description,
+                          "duration": mExercice.duration,
+                          "date": formateDate(mExercice.date),
+                          "_id": mExercice.id,
+                          "username": user[0].username
+                      };
+  
+                      console.log(r);*/
 
-                    r['description'] = mExercice.description;
-                    r.duration = mExercice.duration;
-                    r.date = formateDate(mExercice.date);
-                    r._id = mExercice.id;
-                    r.username = user[0].username;
 
-                    console.log(r);
+                    res.send({
 
+                        "description": mExercice.description,
+                        "duration": mExercice.duration,
+                        "date": formateDate(mExercice.date),
+                        "_id": mExercice.id,
+                        "username": user[0].username
 
-                    res.json({
-                        r
                     });
                 }
             })
